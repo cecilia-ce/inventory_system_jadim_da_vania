@@ -1,3 +1,8 @@
+![image](https://github.com/cecilia-ce/inventory_system_jadim_da_vania/assets/90211249/ea0b4151-441f-4200-b4b0-4e65132f5b96)
+
+
+
+
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
