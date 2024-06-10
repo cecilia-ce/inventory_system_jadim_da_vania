@@ -5,12 +5,76 @@
         class="table custon-table"
     >
         <template v-slot:item.actions="{ item }">
-            <v-icon class="me-2" size="small" @click="editItem(item)">
+            <v-icon class="me-2" size="small" @click="editProduct(item)">
                 mdi-pencil
             </v-icon>
             <v-icon size="small" @click="deleteItem(item)"> mdi-delete </v-icon>
         </template>
     </v-data-table>
+    
+    <v-dialog
+      v-model="isEditModalOpen"
+      width="auto"
+    >
+    <v-card
+        width="40vw"
+        class="pa-10 card rounded-xl"
+    >
+        <h1 class="mb-10">Editar produto</h1>
+        <div class="d-flex ga-5">
+            <v-text-field
+                variant="outlined"
+                label="Nome*"
+                class="inputs"
+            />
+            <v-text-field
+                variant="outlined"
+                label="Fornecedor"
+                class="inputs"
+            />
+        </div>
+        <div class="d-flex ga-5">
+            <v-text-field
+                variant="outlined"
+                label="Quantidade*"
+                class="inputs"
+            />
+            <v-text-field
+                variant="outlined"
+                label="Custo unitário*"
+                class="inputs"
+            />
+            <v-text-field
+                variant="outlined"
+                label="Preço de venda (Unitário)*"
+                class="inputs"
+            />
+        </div>
+        <v-textarea 
+            variant="outlined"
+            label="Descrição"
+            placeholder="Descrição"
+            class="inputs"
+        />
+        
+        <v-card-actions class="d-flex justify-center">
+            <v-btn
+              color="#254E43"
+              variant="outlined"
+              @click="close"
+            >
+              Cancelar
+            </v-btn>
+            <v-btn
+              color="#254E43"
+              variant="outlined"
+              @click="save"
+            >
+              Salvar
+            </v-btn>
+        </v-card-actions>
+    </v-card>
+    </v-dialog>
 </template>
 
 <script setup>
@@ -96,6 +160,12 @@ const products = ref([
         saleValue: "R$ 7,00"
     },
 ])
+
+const isEditModalOpen = ref(false)
+
+function editProduct(item) {
+    isEditModalOpen.value = true
+}
 </script>
 
 <style scoped>
@@ -106,5 +176,15 @@ const products = ref([
     font-size: 16px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); 
     padding: 3%;
+}
+
+.inputs {
+    color: #254E43;
+    border-radius: 25px;
+}
+
+.card {
+    text-align: center;
+    color: #254E43;
 }
 </style>
