@@ -1,3 +1,6 @@
+Sistema de gestão de estoque e venda que está sendo desenvolvido para uma empresa familiar de venda de cactos e suculentas. 
+Tecnologias utilizadas para o frontend são Vue.js 3 com Nuxt.js e Vuetify.  
+
 ![image](https://github.com/cecilia-ce/inventory_system_jadim_da_vania/assets/90211249/ea0b4151-441f-4200-b4b0-4e65132f5b96)
 
 
